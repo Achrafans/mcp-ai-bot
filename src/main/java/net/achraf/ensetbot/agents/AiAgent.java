@@ -31,10 +31,10 @@ public class AiAgent {
                 .build();
     }
 
-    public Flux<String> askAgent(String query){
+    public String askAgent(String query){
         return chatClient.prompt()
                 .user(query)
-                .stream().content();
+                .call().content();
 
     }
 }
